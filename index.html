@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sushmita Bhor — Senior Flutter Developer building cross-platform mobile applications across healthcare, fintech, and enterprise domains.">
+    <title>Sushmita Bhor | Senior Flutter Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --primary-accent: #6C5CE7;
+            --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #6C5CE7 100%);
+            --text-main: #FFFFFF;
+            --text-muted: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #A29BFE;
+            outline-offset: 4px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 8%;
+            background: rgba(11, 14, 20, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-card);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            white-space: nowrap;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--text-main); }
+
+        .hero {
+            padding: 10rem 8% 6rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, rgba(108, 92, 231, 0.15) 0%, transparent 60%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(108, 92, 231, 0.2);
+            border: 1px solid rgba(108, 92, 231, 0.4);
+            border-radius: 20px;
+            color: #A29BFE;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.08rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--gradient-accent);
+            color: #FFF;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+        }
+
+        .section { padding: 5rem 8%; }
+
+        .section-title {
+            font-size: clamp(1.7rem, 4vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 92, 231, 0.5);
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: #FF7675;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 { font-size: 1.35rem; margin-bottom: 1rem; }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-metrics {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-card);
+            font-size: 0.85rem;
+            color: #A29BFE;
+            font-weight: 600;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-pill {
+            padding: 0.6rem 1.2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .timeline-title h3 { font-size: 1.1rem; }
+        .timeline-title p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .timeline-date {
+            color: #A29BFE;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        footer {
+            padding: 4rem 8%;
+            background: #07090D;
+            border-top: 1px solid var(--border-card);
+            text-align: center;
+        }
+
+        footer p { color: var(--text-muted); margin-bottom: 1rem; }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+        }
+
+        .contact-info a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover { color: #A29BFE; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .nav-links { display: none; }
+            .hero { padding: 8.5rem 6% 4rem; }
+            .section { padding: 3.5rem 6%; }
+            .timeline-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .timeline-date { white-space: normal; }
+            footer { padding: 3rem 6%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav aria-label="Main navigation">
+        <div class="logo">Sushmita Bhor</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero" id="about">
+            <span class="hero-tag">Senior Mobile Engineer</span>
+            <h1>Engineered with Passion,<br>Delivered with Excellence</h1>
+            <p>Over 4 years of experience building cross-platform mobile applications using Flutter and Dart across healthcare, fintech, and enterprise domains.</p>
+            <a href="#contact" class="btn">Let's Connect</a>
+        </section>
+
+        <section class="section" id="projects">
+            <h2 class="section-title">Case Studies &amp; Key Projects</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-tag">Healthcare Domain</div>
+                    <h3>Patient Vitals &amp; Device Monitoring</h3>
+                    <p>Developed a patient-monitoring application using WebSockets and REST APIs, with MVVM/Clean Architecture and Provider/MobX state management.</p>
+                    <div class="card-metrics">⚡ Real-time vital metrics streaming</div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Fintech Domain</div>
+                    <h3>Financial Services Mobile App</h3>
+                    <p>Implemented offline-first data handling using Hive and Sqflite for low-network conditions, alongside state management and responsive UI components.</p>
+                    <div class="card-metrics">🚀 100,000+ downloads/users — verify the exact metric before publishing</div>
+                </article>
+
+                <article class="card">
+                    <div class="card-tag">Enterprise Sector</div>
+                    <h3>Workspace Resource Allocator</h3>
+                    <p>Built map-based workspace allocation and availability features, and refactored legacy presentation components using Clean Architecture principles.</p>
+                    <div class="card-metrics">💼 Used by 500+ active team members</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-container">
+                <span class="skill-pill">Flutter</span>
+                <span class="skill-pill">Dart</span>
+                <span class="skill-pill">Clean Architecture</span>
+                <span class="skill-pill">MVVM Pattern</span>
+                <span class="skill-pill">RESTful APIs</span>
+                <span class="skill-pill">WebSockets</span>
+                <span class="skill-pill">Provider</span>
+                <span class="skill-pill">MobX</span>
+                <span class="skill-pill">Hive &amp; Sqflite</span>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">Agile/Scrum</span>
+                <span class="skill-pill">Mobile App Testing</span>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <h2 class="section-title">Work History</h2>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="timeline-title">
+                        <h3>Senior Software Engineer</h3>
+                        <p>CitiusTech</p>
+                    </div>
+                    <div class="timeline-date">Oct 2024 – Oct 2025</div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-title">
+                        <h3>Flutter Developer / Senior Software Engineer</h3>
+                        <p>Pegasus InfoCorp Pvt. Ltd.</p>
+                    </div>
+                    <div class="timeline-date">Sep 2023 – Sep 2024</div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-title">
+                        <h3>Software Engineer</h3>
+                        <p>Sodel Solutions Pvt. Ltd.</p>
+                    </div>
+                    <div class="timeline-date">Aug 2021 – Aug 2023</div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-title">
+                        <h3>React Developer Intern</h3>
+                        <p>Novotoc Infotech Pvt. Ltd.</p>
+                    </div>
+                    <div class="timeline-date">Feb 2021 – Jul 2021</div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Designed &amp; Built by Sushmita Bhor</p>
+        <div class="contact-info">
+            <a href="mailto:sushmitabhor3@gmail.com">sushmitabhor3@gmail.com</a>
+            <a href="tel:+919594315974">+91 9594315974</a>
+            <a href="https://linkedin.com/in/sushmitabhor" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </footer>
+</body>
+</html>
